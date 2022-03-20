@@ -1,7 +1,21 @@
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
+  const [data, setData] = useState(null);
+
+  function getData() {
+    fetch('/main')
+    .then((response) => response.json())
+      .then((data) => {
+        setData(data)
+        console.log(data)
+    })
+  }
+
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,6 +31,13 @@ function App() {
         >
           Learn React
         </a>
+
+        <p>Details</p>
+        <button onClick={getData} >Click</button>
+        {data && <div>
+          <p>Email: {data.email}</p>
+          <p>Name: {data.name}</p>
+        </div>}
       </header>
     </div>
   );
