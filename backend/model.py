@@ -16,10 +16,10 @@ class User(db.Model):
     zip_code = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return f'<User name={self.name} email={self.email} birthday={self.birthday} zip_code={self.zip_code}'
+        return f'<User user_id={self.user_id} name={self.name} email={self.email} birthday={self.birthday} zip_code={self.zip_code}'
 
 
-def connect_to_db(flask_app, db_uri='sqlite:///people.db', echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///people', echo=True):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
     flask_app.config['SQLALCHEMY_ECHO'] = echo
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False

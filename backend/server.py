@@ -25,6 +25,7 @@ def all_users():
     i = 0
     for user in users:
         dict_user = {}
+        dict_user['user_id'] = user.user_id
         dict_user['name'] = user.name
         dict_user['email'] = user.email
         dict_user['birthday'] = user.birthday
