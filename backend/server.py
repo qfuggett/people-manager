@@ -38,7 +38,7 @@ def all_users():
     return jsonify(users_dict)
 
 
-@app.route('/user', methods=["GET", "POST", "PATCH", "DELETE"])
+@app.route('/user', methods=["GET", "POST"])
 def user():
 
     if request.method == 'POST':
@@ -52,6 +52,19 @@ def user():
               user, "*******************************")
 
     return "test"
+
+
+@app.route('/user/<user_id>', methods=["PATCH", "DELETE"])
+def handleUser(user_id):
+
+    if request.method == 'DELETE':
+        user_id = request.json.get('user_id')
+        crud.delete_user(user_id)
+
+        print("********************************",
+              "USER DELETED", "*******************************")
+
+    return "user deleted"
 
 
 if __name__ == '__main__':
