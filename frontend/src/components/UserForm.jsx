@@ -14,6 +14,16 @@ const UserForm = () => {
     function createUser(evt) {
         evt.preventDefault();
         console.log(userName, email, birthday, zipcode)
+        
+        fetch('/user', {
+            method: 'POST',
+            body: JSON.stringify({ 'name': userName, 'email': email, 'birthday': birthday, 'zip_code': zipcode }),
+            headers: {'Content-type': 'application/json'}
+        })
+        // .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log(data.userName, data.email, data.birthday, data.zipcode)
+        // })
     }
 
     return (

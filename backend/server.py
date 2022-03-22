@@ -1,4 +1,4 @@
-from flask import (Flask, jsonify)
+from flask import (Flask, jsonify, request)
 from model import connect_to_db
 import crud
 
@@ -40,6 +40,16 @@ def all_users():
 
 @app.route('/user', methods=["GET", "POST", "PATCH", "DELETE"])
 def user():
+
+    if request.method == 'POST':
+        name = request.json.get('name')
+        email = request.json.get('email')
+        birthday = request.json.get('birthday')
+        zip_code = request.json.get('zip_code')
+
+        user = crud.create_user(name, email, birthday, zip_code)
+        print("********************************", "USER:",
+              user, "*******************************")
 
     return "test"
 
