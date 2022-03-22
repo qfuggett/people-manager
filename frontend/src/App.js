@@ -1,20 +1,20 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import './App.css';
 import User from './components/User';
 import UserForm from './components/UserForm';
 import UserTable from './components/table';
 
-const UseUserContext = createContext({});
+export const UseUserContext = createContext({});
 
 function App() {
 
   const [userData, setUserData] = useState(null);
-    
+
     useEffect(() => {
         fetch('/allusers')
         .then(response => response.json())
-            .then((data) => setUserData(data))
-    }, [userData])
+        .then((data) => setUserData(data))
+    }, [])
 
     const holdUser = []
     for (let user in userData) {
@@ -30,7 +30,7 @@ function App() {
   };
   
   return (
-    <UseUserContext.Provider className="App" value={{holdUser}}>
+    <UseUserContext.Provider className="App" value={{ userData}}>
       <header className="App-header">
         <UserForm />
         <UserTable holdUser={holdUser}/>
