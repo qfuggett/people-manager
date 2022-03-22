@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Col, Row, Form, Button } from "react-bootstrap";
     
-function UserForm(){
+export default function UserForm(){
     const [userName, setUserName] = useState(null);
     const [email, setEmail] = useState(null);
     const [birthday, setBirthday] = useState(null);
@@ -45,4 +45,3 @@ function UserForm(){
 
 }
 
-export default UserForm;
