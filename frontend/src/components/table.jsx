@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import User from './User';
+import UserForm from './UserForm';
 
 
 const UserTable = () => {
@@ -18,11 +19,12 @@ const UserTable = () => {
         holdUser.push(
             <User key={userData[user].user_id} id={userData[user].user_id} name={userData[user].name} email={userData[user].email} birthday={userData[user].birthday} zip={userData[user].zip_code} />
         )
-        }
+    };
                     
     
     return (
         <div>
+            <UserForm />
             <Table striped bordered hover variant="dark">
                 <thead>
                     <tr>
@@ -36,7 +38,7 @@ const UserTable = () => {
                 <tbody>
                     {holdUser}
                 </tbody>
-                </Table>
+            </Table>
         </div>
     )
 }
