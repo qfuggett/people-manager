@@ -15,6 +15,8 @@ const UserTable = (props) => {
                     <th>Email</th>
                     <th>Birthday</th>
                     <th>Zip Code</th>
+                    <th></th>
+                    <th></th>
                     </tr>
                 </thead>
                 <tbody>
