@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Col, Row, Form, Button } from "react-bootstrap";
-import User from './User';
-
-
-
     
-const UserForm = () => {
-    const [userName, setUserName] = useState('');
-    const [email, setEmail] = useState('');
-    const [birthday, setBirthday] = useState('');
-    const [zipcode, setZipcode] = useState('');
+function UserForm(){
+    const [userName, setUserName] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [birthday, setBirthday] = useState(null);
+    const [zipcode, setZipcode] = useState(null);
 
     function createUser(evt) {
         evt.preventDefault();
@@ -20,10 +16,6 @@ const UserForm = () => {
             body: JSON.stringify({ 'name': userName, 'email': email, 'birthday': birthday, 'zip_code': zipcode }),
             headers: {'Content-type': 'application/json'}
         })
-        // .then((response) => response.json())
-        //     .then((data) => {
-        //         console.log(data.userName, data.email, data.birthday, data.zipcode)
-        // })
     }
 
     return (
@@ -32,13 +24,13 @@ const UserForm = () => {
             <Form onSubmit={(evt) => {createUser(evt)}}>
                 <Row className="align-items-center">
                     <Col xs="auto">
-                        <Form.Control placeholder="Name" value={userName} onChange={(evt)=> setUserName(evt.target.value)}/>
+                        <Form.Control placeholder="Name" value={userName} onChange={(evt) => setUserName(evt.target.value)} />
                     </Col>
                     <Col xs="auto">
-                        <Form.Control placeholder="Email" value={email} onChange={(evt)=> setEmail(evt.target.value)}/>
+                        <Form.Control placeholder="Email" value={email} onChange={(evt) => setEmail(evt.target.value)} />
                     </Col>
                     <Col xs="auto">
-                        <Form.Control type="date" placeholder="Birthday" value={birthday} onChange={(evt)=> setBirthday(evt.target.value)}/>
+                        <Form.Control type="date" placeholder="Birthday" value={birthday} onChange={(evt) => setBirthday(evt.target.value)} />
                     </Col>
                     <Col xs="auto">
                         <Form.Control placeholder="Zip Code" value={zipcode} onChange={(evt)=> setZipcode(evt.target.value)}/>
