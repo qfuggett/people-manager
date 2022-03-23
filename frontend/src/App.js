@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import './App.css';
 import User from './components/User';
 import UserForm from './components/UserForm';
@@ -30,7 +30,7 @@ function App() {
   };
   
   return (
-    <UseUserContext.Provider className="App" value={{ userData}}>
+    <UseUserContext.Provider className="App" value={{ userData }}>
       <header className="App-header">
         <UserForm />
         <UserTable holdUser={holdUser}/>
