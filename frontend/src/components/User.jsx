@@ -8,15 +8,14 @@ export default function User(props) {
 
     function updateUser(e) {
         e.preventDefault();
-        console.log("update user edit button clicked")
+        console.log(props.id, props.name, props.email, props.zip)
         
         
     }
 
-    function deleteUser() {
-        console.log(props.id, props.name, props.email, props.zip)
-        const user_id = props.id
-
+    function deleteUser(e) {
+        e.preventDefault();
+        
         fetch(`/user/{ user_id }`, {
             method: 'DELETE',
             body: JSON.stringify({ 'user_id': props.id }),
