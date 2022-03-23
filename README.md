@@ -20,7 +20,8 @@ Begin using the application!
 Current functionality only allows users to see all users in the database, add and delete users.
 Future iterations will include UPDATE crud action.
 
-The project was started with React Bootstrap, which does not have functionality for editing a cell. React-bootstrap-table-next allows for cell editing, of which, will be included in the next iteration. 
+The project was started with React Bootstrap, which unfortunately, does not have functionality for editing a cell. 
+Because of time constraints, React-bootstrap-table-next, which allows for cell editing, will be implemented in the next iteration for the UPDATE crud action. 
 
 Future iterations will also include testing.
 
