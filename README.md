@@ -8,6 +8,8 @@ After cloning from github, in your terminal, cd into the backend and run virtual
 `source env/bin/activate`
 `pip3 install -r requirements.txt`
 
+Run the seeds file to create and load the database with `python3 seeds.py`
+
 Start the server with `python3 server.py`
 
 In a new terminal:
