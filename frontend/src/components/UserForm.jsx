@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Col, Row, Form, Button } from "react-bootstrap";
     
 export default function UserForm(){
-    const [userName, setUserName] = useState(null);
-    const [email, setEmail] = useState(null);
-    const [birthday, setBirthday] = useState(null);
-    const [zipcode, setZipcode] = useState(null);
+    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState("");
+    const [birthday, setBirthday] = useState("");
+    const [zipcode, setZipcode] = useState("");
 
     function createUser(evt) {
         evt.preventDefault();
