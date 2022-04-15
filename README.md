@@ -8,6 +8,8 @@ After cloning from github, in your terminal, cd into the backend and run virtual
 `source env/bin/activate`
 `pip3 install -r requirements.txt`
 
+Run the seeds file to create and load the database with `python3 seeds.py`
+
 Start the server with `python3 server.py`
 
 In a new terminal:
@@ -20,7 +22,8 @@ Begin using the application!
 Current functionality only allows users to see all users in the database, add and delete users.
 Future iterations will include UPDATE crud action.
 
-The project was started with React Bootstrap, which does not have functionality for editing a cell. React-bootstrap-table-next allows for cell editing, of which, will be included in the next iteration. 
+The project was started with React Bootstrap, which unfortunately, does not have functionality for editing a cell. 
+Because of time constraints, React-bootstrap-table-next, which allows for cell editing, will be implemented in the next iteration for the UPDATE crud action. 
 
 Future iterations will also include testing.
 
