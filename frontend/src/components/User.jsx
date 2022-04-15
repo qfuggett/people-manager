@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from "react-bootstrap";
-import { UseUserContext } from "../App";
 
 export default function User(props) {
-
-    const { userData, setUserData } = useContext(UseUserContext);
+    console.log("user")
 
     function updateUser(e) {
         e.preventDefault();
-        console.log(props.id, props.name, props.email, props.zip)
+        console.log("USER", props.id, props.name, props.email, props.zip)
         
         
     }
@@ -22,9 +20,9 @@ export default function User(props) {
             headers: {'Content-type': 'application/json'}
         })
     }
-
+    
     return (
-        <tr>
+            <tr>
             <th>{props.id}</th>  
             <th>{props.name}</th>
             <th>{props.email}</th>
@@ -32,6 +30,6 @@ export default function User(props) {
             <th>{props.zip}</th>
             <th><Button onClick={updateUser}>Edit</Button></th>
             <th><Button onClick={deleteUser}>Delete</Button></th>
-        </tr>
+        </tr> 
     )
 }
